@@ -19,17 +19,17 @@ public class ArrayDemo{
     System.out.println("Expected: 4 vs my function: " + countZeros2D(arr4));
     int[][] arr5 = new int[][] {{1, 10}, {231, 0}, {0, 0}, {20, 0}};
     System.out.println("Expected: 4 vs my function: " + countZeros2D(arr5));
-	
+
 	//arr2DSum test cases
 	int[][] arr6 = new int[][] {{-321, 123, -53}, {65, -31, -31}, {-95, -95, -95}};
 	System.out.println("Expected: -533 vs my function: " + arr2DSum(arr6));
 	System.out.println("Expected: 1057 vs my function: " + arr2DSum(arr4));
-	
+
 	//replaceNegative test cases
 	System.out.print("Expected: [[1, 123, 0], [65, 1, 0], [0, 0, 1]] vs my function: "); replaceNegative(arr6);
 	int[][] arr7 = new int[][] {{2, -1}, {32, -1}, {31, -31}};
 	System.out.print("Expected: [[2, 0], [32, 1], [31, 0]] vs my function: "); replaceNegative(arr7);
-	
+
 	//copy test cases
 	String copyarr5 = arrToString(copy(arr5));
 	System.out.println("Expected: " + arrToString(arr5) + " vs my function: " + copyarr5);
@@ -37,18 +37,18 @@ public class ArrayDemo{
 	arr5[3][0] = -10000;
 	System.out.println(arrToString(arr5));
 	System.out.println(copyarr5);
-	
+
 	String copyarr7 = arrToString(copy(arr7));
 	System.out.println("Expected: " + arrToString(arr7) + " vs my function: " + copyarr7);
 	arr7[1][1] = -10000;
 	arr7[2][0] = -10000;
 	System.out.println(arrToString(arr7));
 	System.out.println(copyarr7);
-	
+
 	//swapRC test cases
 	System.out.println("Expected: [[0, 100, 1, 213], [0, 0, 321, 320], [1, 1, 0, 10]] vs my function: " + arrToString(swapRC(arr4)));
 	System.out.println("Expected: [[-321, 65, -95], [123, -31, -95], [-53, -31, -95]] vs my function: " + arrToString(swapRC(arr6)));
-	
+
 	//htmlTable test cases
 	System.out.println("Expected: <table><tr><td>1</td><td>2</td><td>0</td></tr><tr><td>0</td><td>2</td><td>1</td></tr></table> vs my function: " + htmlTable(arr3));
 	int[][] arr8 = new int[][] {{1,2},{3}};
@@ -161,8 +161,9 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-	  String ans = "<table><tr>";
+	  String ans = "<table>";
 	  for (int i = 0; i < nums.length; i++){
+      ans += "<tr>";
 		  for (int j = 0; j < nums[i].length; j++){
 			  ans += "<td>";
 			  ans += nums[i][j];

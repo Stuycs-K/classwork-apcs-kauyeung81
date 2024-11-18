@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TriangleTester {
-	
+
 	//Part A
 	public static boolean checkTriangle(int a, int b, int c) {
 		if ((a + b > c) && (a + c > b) && (b + c > a)) {
@@ -32,7 +32,7 @@ public class TriangleTester {
 			return -1;
 		}
 	}
-	
+
 	//Part B
 	public static int countTrianglesB (String filename) {
 		try {
@@ -65,7 +65,7 @@ public class TriangleTester {
 			return -1;
 		}
 	}
-	
+
 	public static int countTrianglesX (String filename){
 		try {
 			File file = new File(filename);
@@ -86,13 +86,15 @@ public class TriangleTester {
 			return -1;
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		//Testing part a
 		//System.out.println(countTrianglesA("inputTri.txt"));
 		//Testing part break;
 		System.out.println(countTrianglesB("inputTri.txt") + " should be 95");
 		System.out.println(countTrianglesX("inputTriX.txt") + " should be 1");
+		System.out.println(countTrianglesA("adventDay3.1.txt"));
+		System.out.println(countTrianglesB("adventDay3.1.txt"));
 	  }
 
 }

@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class TriangleTester {
+public class dayThree{
 
 	//Part A
 	public static boolean checkTriangle(int a, int b, int c) {
@@ -33,8 +33,7 @@ public class TriangleTester {
 		}
 	}
 
-	//Part B
-	public static int countTrianglesB (String filename) {
+  public static int countTrianglesB (String filename) {
 		try {
 			File file = new File(filename);
 			Scanner input = new Scanner(file);
@@ -66,32 +65,11 @@ public class TriangleTester {
 		}
 	}
 
-	public static int countTrianglesX (String filename){
-		try {
-			File file = new File(filename);
-			Scanner input = new Scanner(file);
-			int count = 0;
-			while (input.hasNextLine()) {
-				String line = input.nextLine();
-				String[] nums = line.split("x");
-				int a = Integer.parseInt(nums[0]);
-				int b = Integer.parseInt(nums[1]);
-				int c = Integer.parseInt(nums[2]);
-				if (checkTriangle(a, b , c)) {
-					count++;
-				}
-			}
-			return count;
-		} catch (FileNotFoundException e) {
-			return -1;
-		}
-	}
-
 	public static void main(String[] args) {
 		//Testing part a
 		//System.out.println(countTrianglesA("inputTri.txt"));
 		//Testing part break;
-		System.out.println(countTrianglesA("adventDay3.txt"));
+		System.out.println(countTrianglesB("adventDay3.txt"));
 	  }
 
 }

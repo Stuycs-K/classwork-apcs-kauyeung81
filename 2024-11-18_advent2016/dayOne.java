@@ -1,8 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.*; 
-import java.util.*; 
+import java.io.*;
+import java.util.*;
 
 public class dayOne{
 
@@ -13,16 +13,16 @@ public class dayOne{
 		int[] position = new int[]{xCord, yCord};
 		int[] dir = new int[]{1,0};
 		int moveset = 0;
-		
+
     for (int i = 0; i < movement.length; i++){
-			int move = Integer.parseInt(String.valueOf(movement[i].charAt(1)));
+			int move = Integer.parseInt(movement[i].substring(1));
     	if (movement[i].charAt(0) == 'L'){
     		direction--;
     	}
     	if (movement[i].charAt(0) == 'R'){
     		direction++;
     	}
-			
+
 			direction = Math.abs(direction) % 3;
 			if (direction == 0){
 				move = move * 1;
@@ -40,10 +40,11 @@ public class dayOne{
 				move = move * -1;
 				xCord += move;
 			}
+      System.out.println(move);
 			position = new int[]{xCord, yCord};
 			System.out.println(Arrays.toString(position));
     }
-		
+
 		moveset += position[0];
 		moveset += position[1];
 		return moveset;
@@ -56,16 +57,16 @@ public class dayOne{
 				String in = input.nextLine();
 				String[] instructions = in.split(", ");
 				input.close();
-				
+
 				int[] position = new int[]{0, 0};
 				int[] direction = new int[]{1,0};
-				
+
         int x = 0;
 				int y = 0;
 				int output = 0;
-				
+
 				output = solve(instructions);
-				
+
 				return output;
 
   		} catch (FileNotFoundException e) {

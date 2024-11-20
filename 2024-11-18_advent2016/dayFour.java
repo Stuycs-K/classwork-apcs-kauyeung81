@@ -29,6 +29,7 @@ public class dayFour{
 			File file = new File(filename);
 			Scanner input = new Scanner(file);
 			int count = 0;
+
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
 				String[] nums = line.split("-");
@@ -36,11 +37,12 @@ public class dayFour{
 					return -1;
 				}
 			}
+			
 			return count;
 		} catch (FileNotFoundException e) {
 			return -1;
 		}
 	}
-		
-		
+
+
 	}

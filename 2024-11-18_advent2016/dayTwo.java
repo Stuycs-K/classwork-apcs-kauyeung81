@@ -44,11 +44,10 @@ public class dayTwo{
 
 			while (input.hasNext()) {
 				String row = input.next();
-				System.out.println("\n" + row);
 				ans = solve(row);
 				output = output + ans;
 			}
-			
+
 			return output;
 		} catch (FileNotFoundException e) {
 			return null;

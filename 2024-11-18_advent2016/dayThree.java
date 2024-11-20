@@ -91,8 +91,7 @@ public class TriangleTester {
 		//Testing part a
 		//System.out.println(countTrianglesA("inputTri.txt"));
 		//Testing part break;
-		System.out.println(countTrianglesB("inputTri.txt") + " should be 95");
-		System.out.println(countTrianglesX("inputTriX.txt") + " should be 1");
+		System.out.println(countTrianglesA("adventDay3.txt"));
 	  }
 
 }

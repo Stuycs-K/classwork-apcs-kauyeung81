@@ -13,17 +13,21 @@ public class dayTwo{
 		int xStart = 1, yStart = 1;
 		int position = keypad[1][1];
 		for (int i = 0; i < str.length(); i++){
-			if (str.charAt(i) == 'U'){
-				position = keypad[xStart-1][yStart];
+			if (str.charAt(i) == 'U' && xStart != 0){
+				xStart--;
+				position = keypad[xStart][yStart];
 			}
-			if (str.charAt(i) == 'R'){
-				position = keypad[xStart][yStart+1];
+			if (str.charAt(i) == 'R' && yStart != 2){
+				yStart++;
+				position = keypad[xStart][yStart];
 			}
-			if (str.charAt(i) == 'D'){
-				position = keypad[xStart+1][yStart];
+			if (str.charAt(i) == 'D' && xStart != 2){
+				xStart++;
+				position = keypad[xStart][yStart];
 			}
-			if (str.charAt(i) == 'L'){
-				position = keypad[xStart][yStart-1];
+			if (str.charAt(i) == 'L' && yStart != 0){
+				yStart--;
+				position = keypad[xStart][yStart];
 			}
 		}
 		return position;
@@ -44,7 +48,7 @@ public class dayTwo{
 				ans = solve(row);
 				output = output + ans;
 			}
-
+			
 			return output;
 		} catch (FileNotFoundException e) {
 			return null;

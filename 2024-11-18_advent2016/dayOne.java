@@ -22,8 +22,9 @@ public class dayOne{
     	if (movement[i].charAt(0) == 'R'){
     		direction++;
     	}
+			System.out.println("dir = " + direction);
 
-			direction = Math.abs(direction) % 3;
+			direction = Math.abs(direction) % 4;
 			if (direction == 0){
 				move = move * 1;
 				yCord += move;

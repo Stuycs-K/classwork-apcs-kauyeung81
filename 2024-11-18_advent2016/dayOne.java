@@ -22,32 +22,32 @@ public class dayOne{
     	if (movement[i].charAt(0) == 'R'){
     		direction++;
     	}
-			System.out.println("dir = " + direction);
+			//System.out.println("dir = " + direction);
 
-			direction = Math.abs(direction) % 4;
+			direction = direction % 4;
 			if (direction == 0){
 				move = move * 1;
 				yCord += move;
 			}
-			if (direction == 1){
+			if (direction == 1 || direction == -3){
 				move = move * 1;
 				xCord += move;
 			}
-			if (direction == 2){
+			if (direction == 2 || direction == -2){
 				move = move * -1;
 				yCord += move;
 			}
-			if (direction == 3){
+			if (direction == 3 || direction == -1){
 				move = move * -1;
 				xCord += move;
 			}
-      System.out.println(move);
+      //System.out.println(move);
 			position = new int[]{xCord, yCord};
-			System.out.println(Arrays.toString(position));
+			//System.out.println(Arrays.toString(position));
     }
 
-		moveset += position[0];
-		moveset += position[1];
+		moveset += Math.abs(position[0]);
+		moveset += Math.abs(position[1]);
 		return moveset;
   }
 

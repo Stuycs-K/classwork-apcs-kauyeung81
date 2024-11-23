@@ -76,7 +76,7 @@ public class daySix{
 		test.add("g");
 		test.add("v");
 		test.add("r");
-		System.out.println(count(test));
+		//System.out.println(count(test));
 		System.out.println(signal("adventDay6.txt"));
 	}
 		

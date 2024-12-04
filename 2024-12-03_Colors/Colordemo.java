@@ -16,17 +16,36 @@ public class Colordemo{
   }
 
   public static void main(String[] args){
-    for(int r = 0; r < 256; r+=32){
-      for(int g = 0; g <= 256; g+=32){
-        for(int b = 0; b <= 256; b+=32){
+		/*int r = 255;
+		int g = 0;
+		int b = 0;
+		while (g < 256){
+			g+=16;
+			System.out.print("\u001b[48;2;"+200+";"+255+";"+200+";7m.");
+			System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+		}
+		while (r > 0){
+			r-=16;
+			System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+		}
+		while (b < 256){
+			b+=16;
+			System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+		}
+		while (g > 0){
+			g-=16;
+			System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+		}*/
+		
+    for(int r = 255; r > 0; r-=10){
+      for(int g = 0; g < 255; g+=10){
+        for(int b = 0; b < 256; b+=10){
           System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
         }
       }
-    System.out.println();
+    //System.out.println();
     }
 
   }
-
-
-
+	
 }

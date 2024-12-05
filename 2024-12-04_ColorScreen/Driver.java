@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Driver{
 //MODIFIERS
 public static final int BRIGHT = 1;
@@ -69,29 +71,112 @@ public static void main(String[]args){
   System.out.print(CLEAR_SCREEN);
   System.out.print(HIDE_CURSOR);
 
-  //SHOW A LOT OF COLORS!
-  for(int i = 0; i < 80; i++){
-    go(i+1,0);
-    color(30+i,background(WHITE));
+  //Border
+	int i = 0;
+	int j = 0;
+  for(; i < 30; i++){
+    go(i+1,j);
+    color(30+i,background(RED));
+    System.out.print(" ");
+  }
+  for(; j < 80; j++){
+    go(i,j+1);
+    color(30+i,background(RED));
+    System.out.print(" ");
+  }
+  for(; i >= 0; i--){
+    go(i,j);
+    color(30+i,background(RED));
+    System.out.print(" ");
+  }
+  for(; j >= 0; j--){
+    go(i,j);
+    color(30+i,background(RED));
     System.out.print(" ");
   }
 
-  //HOW TO USE:
-  go(14,20);
-  color(YELLOW,background(BLUE),ITALICS);
-  System.out.print("ITALICS FISH!~~~~");
-  go(12,10);
-  color(GREEN,background(YELLOW),BRIGHT);
-  System.out.print("_#o.o#_");
-  wait(500);
-  erase(14,20,2);
-  wait(500);
-  erase(14,22,2);
-  wait(500);
-  erase(14,24,2);
-  wait(500);
-  erase(14,26,2);
-  go(30,0);//so the prompt is printed BELOW the other text.
+	int[] arr = new int[3];
+	for (int k = 0; k < arr.length; k++){
+		arr[k] = (int)(Math.random() * 100);
+	}
+
+	System.out.println(RESET);
+	//System.out.println(Arrays.toString(arr));
+	int col = 28;
+  go(2,col);
+	for (int a : arr){
+		if (a < 25){
+			color(BRIGHT, RED);
+			System.out.print(a);
+			col += 10;
+			go(2,col);
+		}
+		if (a > 75){
+			color(BRIGHT, GREEN);
+			System.out.print(a);
+			col += 10;
+			go(2,col);
+		}
+		if (a > 25 && a < 75){
+			color(WHITE);
+			System.out.print(a);
+			col += 10;
+			go(2,col);
+		}
+	}
+  
+  go(3,2);
+  color(RED);
+	for (int a = 2; a < 80; a++){
+		System.out.print("-");
+	}
+	
+	int b = 6;
+	int c = 28;
+	while (b < 8){
+		go(b,c);
+		color(31,background(RED));
+		System.out.println(" ");
+		b++;
+	}
+	
+	b = 6;
+	c = 48;
+	while (b < 8){
+		go(b,c);
+		color(30+i,background(RED));
+		System.out.println(" ");
+		b++;
+	}
+	
+	b = 12;
+	c = 30;
+	while (b < 15){
+		go(b,c);
+		color(30+i,background(RED));
+		System.out.println(" ");
+		b++;
+	}
+	
+	b = 12;
+	c = 46;
+	while (b < 15){
+		go(b,c);
+		color(30+i,background(RED));
+		System.out.println(" ");
+		b++;
+	}
+	
+	b = 15;
+	c = 30;
+	while (c < 47){
+		go(b,c);
+		color(30+i,background(RED));
+		System.out.println(" ");
+		c++;
+	}
+  
+  go(31,0);//so the prompt is printed BELOW the other text.
   System.out.println(RESET);
 }
 

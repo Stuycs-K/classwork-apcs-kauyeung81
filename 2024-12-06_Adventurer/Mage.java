@@ -38,29 +38,68 @@ public class Mage extends Adventurer{
 
   public String attack(Adventurer other){
     other.applyDamage(5);
+		return (other + " took 5 damage!");
   }
 
   //heall or buff the target adventurer
   public String support(Adventurer other){
-    other.setSpecial(20);
+		if (other.getSpecial() < other.getSpecialMax()){
+			other.setSpecial(20);
+			return (other + "'s mana fully recovered!");
+		}
+		else{
+			return (other + "'s mana already max!");
+		}
   }
 
   //heall or buff self
   public String support(){
-    setSpecial(15);
+		if (mana < maxMana){
+			restoreSpecial(getSpecialMax() - getSpecial());
+			return ("Mana fully recovered!");
+		}
+		else{
+			return ("Mana already full!");
+		}
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other){
     other.applyDamage(7);
+		return (other + "takes 7 damage!");
   }
 
   /*
     standard methods
   */
   public void applyDamage(int amount){
-    this.HP -= amount;
+    super.applyDamage(amount);
   }
+	
+	//Get Methods
+	  public String getName(){
+	    return super.getName();
+	  }
+
+	  public int getHP(){
+			return super.getHP();
+	  }
+
+	  public int getmaxHP(){
+			return super.getmaxHP();
+	  }
+	  public void setmaxHP(int newMax){
+			super.setmaxHP(newMax);
+	  }
+
+	  //Set Methods
+	  public void setHP(int health){
+			super.setHP(health);
+	  }
+
+	  public void setName(String s){
+			super.setName(s);
+	  }
 
 
 }

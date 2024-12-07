@@ -23,7 +23,7 @@ public class Mage extends Adventurer{
   }
 
   public String getSpecialName(){
-    return ("Mana");
+    return "Mana";
   }
   //accessors
   public int getSpecial(){
@@ -37,8 +37,15 @@ public class Mage extends Adventurer{
   }
 
   public String attack(Adventurer other){
-    other.applyDamage(5);
-		return (other + " took 5 damage!");
+		if (getSpecial() >= 5){
+	    other.applyDamage(5);
+			setSpecial(getSpecial() - 5);
+			return (getName() + " attacked " + other + "! " + other + " took 5 damage!");
+		}
+    else{
+    	return (getName() + " doesn't have enough mana to attack!");
+    }
+		
   }
 
   //heall or buff the target adventurer

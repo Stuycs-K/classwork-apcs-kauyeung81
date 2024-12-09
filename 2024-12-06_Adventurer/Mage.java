@@ -40,22 +40,21 @@ public class Mage extends Adventurer{
 		if (getSpecial() >= 5){
 	    other.applyDamage(5);
 			setSpecial(getSpecial() - 5);
-			return (getName() + " attacked " + other + "! " + other + " took 5 damage!");
+			return (getName() + " attacked " + other + "! " + other + " takes 5 damage!");
 		}
     else{
     	return (getName() + " doesn't have enough mana to attack!");
     }
-		
   }
 
   //heall or buff the target adventurer
   public String support(Adventurer other){
 		if (other.getSpecial() < other.getSpecialMax()){
 			other.setSpecial(20);
-			return (other + "'s mana fully recovered!");
+			return (getName() + " uses support on " + other + "! " + other + "'s mana fully recovered!");
 		}
 		else{
-			return (other + "'s mana already max!");
+			return (getName() + " uses support on " + other + "! " + other + "'s mana is already at max!");
 		}
   }
 
@@ -63,17 +62,24 @@ public class Mage extends Adventurer{
   public String support(){
 		if (mana < maxMana){
 			restoreSpecial(getSpecialMax() - getSpecial());
-			return ("Mana fully recovered!");
+			return (getName() + " uses support on himself! " + getName() + "'s mana is fully recovered!");
 		}
 		else{
-			return ("Mana already full!");
+			return (getName() + " uses support on himself! " + getName() + "'s mana is already full!");
 		}
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other){
-    other.applyDamage(7);
-		return (other + "takes 7 damage!");
+		if (getSpecial() >= 7){
+	    other.applyDamage(7);
+			setSpecial(getSpecial() - 7);
+			return (getName() + " uses special attack! " + other + " takes 7 damage!");
+		}
+    else{
+    	return (getName() + " doesn't have enough mana to use their special attack!");
+    }
+		
   }
 
   /*
@@ -101,7 +107,9 @@ public class Mage extends Adventurer{
 
 	  //Set Methods
 	  public void setHP(int health){
-			super.setHP(health);
+			if (health <= getmaxHP()){
+				super.setHP(health);
+			}
 	  }
 
 	  public void setName(String s){

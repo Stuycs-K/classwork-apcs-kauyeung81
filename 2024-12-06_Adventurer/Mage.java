@@ -2,16 +2,20 @@ public class Mage extends Adventurer{
   private int mana;
   private int maxMana;
 
+  public Mage(String name, int hp, int mana){
+    super(name, hp);
+    this.mana = mana;
+    this.maxMana = mana;
+  }
+
   public Mage(String name){
     super(name, 10);
     this.mana = 20;
     this.maxMana = mana;
   }
 
-  public Mage(String name, int hp, int mana){
-    super(name, hp);
-    this.mana = mana;
-    this.maxMana = mana;
+  public Mage(){
+    this("Bobby");
   }
 
   public int restoreSpecial(int n){
@@ -79,7 +83,7 @@ public class Mage extends Adventurer{
     else{
     	return (getName() + " doesn't have enough mana to use their special attack!");
     }
-		
+
   }
 
   /*
@@ -88,7 +92,7 @@ public class Mage extends Adventurer{
   public void applyDamage(int amount){
     super.applyDamage(amount);
   }
-	
+
 	//Get Methods
 	  public String getName(){
 	    return super.getName();

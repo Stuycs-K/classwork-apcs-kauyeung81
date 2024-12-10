@@ -16,12 +16,14 @@ class Game {
 
 	    System.out.println("\nType: (a)ttack / (sp)ecial / (su)pport / quit");
 	    String action = userInput.nextLine();
+			
 			while (!action.equals("quit") && !action.equals("a") && !action.equals("attack")
 				&& !action.equals("sp") && !action.equals("special") && !action.equals("su")
 			&& !action.equals("support")){
 				System.out.println("\nType: (a)ttack / (sp)ecial / (su)pport / quit");
 				action = userInput.nextLine();
 			}
+			
 	    if (action.equals("quit")){
 	      System.exit(0);
 	    }

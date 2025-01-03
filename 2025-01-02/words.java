@@ -3,11 +3,11 @@ public class words{
   public static void makeWords(int remainingLetters, String result, String alphabet){
     if (remainingLetters > 0){
       for (int i = 0; i < alphabet.length(); i++){
-        String letter = alphabet.charAt(i);
+        String letter = Character.toString(alphabet.charAt(i));
         result = result + letter;
         System.out.println(result);
       }
-      return makeWords(remainingLetters-1, result, alphabet);
+      makeWords(remainingLetters-1, result, alphabet);
     }
     else{
       System.out.println(result);

@@ -1,17 +1,14 @@
 public class words{
 
   public static void makeWords(int remainingLetters, String result, String alphabet){
-    if (remainingLetters > 0){
-      for (int i = 0; i < alphabet.length(); i++){
-        String letter = Character.toString(alphabet.charAt(i));
-        result = result + letter;
-        System.out.println(result);
-      }
-      makeWords(remainingLetters-1, result, alphabet);
+    if (remainingLetters == 0){
+    	System.out.println(result);
     }
-    else{
-      System.out.println(result);
-    }
+		else{
+			for (int i = 0; i < alphabet.length(); i++){
+				makeWords(remainingLetters-1, result+Character.toString(alphabet.charAt(i)), alphabet);
+			}
+		}
   }
 
   public static void main(String[] args){

@@ -16,7 +16,15 @@ public class Backtracking{
   }
 
   public static boolean groupSum(int start, int[] nums, int target) {
-    return true;
+    for (int i = 0; i < nums.length; i++){
+      if (start + nums[i] == target){
+        return true;
+      }
+      else{
+        return groupSum(start+nums[i], nums)
+      }
+    }
+    return false;
   }
 
 }
